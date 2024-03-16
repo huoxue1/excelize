@@ -614,9 +614,9 @@ func (f *File) extractCellAnchor(anchor *xdrCellAnchor, drawingRelationships str
 			if cond(anchor.From) {
 				if drawRel = f.getDrawingRelationships(drawingRelationships,
 					anchor.Pic.BlipFill.Blip.Embed); drawRel != nil {
-					if _, ok := supportedImageTypes[strings.ToLower(filepath.Ext(drawRel.Target))]; ok {
-						cb(anchor, drawRel)
-					}
+
+					cb(anchor, drawRel)
+
 				}
 			}
 		}
